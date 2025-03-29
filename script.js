@@ -174,3 +174,7 @@ if (storedCompScore) {
     compScore = JSON.parse(storedCompScore);
     CompScore.innerText = compScore;
 }
+
+localStorage.setItem("testKey", "testValue");
+console.log(localStorage.getItem("testKey"));
+localStorage.removeItem("testKey");
