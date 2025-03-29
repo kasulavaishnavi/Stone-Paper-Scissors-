@@ -1,0 +1,678 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Variables */
+
+:root {
+  --white-text: #ffffff;
+  --score-text: #656565;
+  --bg-color: #8cc461;
+  --bg-rules: #004429;
+  --rock: #0074b6;
+  --scissors: #bd00ff;
+  --paper: #ffa943;
+  --shadow-light: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--bg-color);
+}
+
+/* Main Content */
+.container {
+  position: relative;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding-top: 0.3rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 130px;
+  color: var(--white-text);
+  padding: 0.9rem;
+  font-size: 1.5rem;
+  letter-spacing: 2.3px;
+  border: 2px solid white;
+  border-radius: 13px;
+  box-shadow: var(--shadow-light);
+}
+
+.score {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.score-title {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  height: 110px;
+  width: 120px;
+  gap: 0.6rem;
+  border: 1px solid white;
+  border-radius: 9px;
+  background-color: white;
+  color: var(--score-text);
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  text-align: center;
+  box-shadow: var(--shadow-light);
+}
+
+#user-score,
+#comp-score {
+  color: black;
+  font-size: 3rem;
+}
+
+/* game-choice */
+
+.game {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "rock scissors"
+    "paper paper";
+  place-items: center;
+  height: 25rem;
+  padding-top: 3rem;
+  margin-left: 10rem;
+  width: 25rem;
+
+}
+
+.lines {
+  position: absolute;
+  background-color: #144114;
+  z-index: -2;
+  box-shadow: var(--shadow-light);
+}
+#line1 {
+  height: 5%;
+  width: 46%;
+  top: 33%;
+  left: 26%;
+}
+#line2 {
+  height: 5%;
+  width: 40%;
+  top: 50%;
+  left: 15%;
+  transform: rotate(-125deg);
+}
+#line3 {
+  height: 5%;
+  width: 39%;
+  top: 59%;
+  right: 20%;
+  transform: rotate(-54deg);
+}
+.choices {
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 10000; 
+  box-shadow: inset 0 0.5rem var(--shadow-light);
+}
+.choice {
+  position: relative;
+  height: 5rem;
+  width: 5rem;
+  background-color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+i {
+  font-size: xx-large;
+}
+
+.choices[data-choice="rock"] {
+  grid-area: rock;
+}
+
+.choices[data-choice="peace"] {
+  grid-area: scissors;
+}
+.choices[data-choice="paper"] {
+  grid-area: paper;
+}
+
+.choices .rock::before {
+  background-color: var(--rock);
+}
+.choices .peace::before {
+  background-color: var(--scissors);
+}
+
+.choices .paper::before {
+  background-color: var(--paper);
+}
+
+.choice::before,
+.choice::after {
+  content: "";
+  position: absolute;
+  left: -15%;
+  top: -15%;
+  width: 130%;
+  height: 130%;
+  border-radius: 50%;
+  z-index: -1;
+  box-shadow: var(--shadow-light);
+}
+.choice::after {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.choices:focus .choice::after {
+  opacity: 1;
+  box-shadow: 0 0 0 1.6rem rgb(46, 154, 37), 0 0 0 3rem rgb(46, 154, 37, 0.4),
+    0 0 0 4rem rgb(46, 154, 37, 0.2);
+  z-index: -3;
+}
+
+/* RULES */
+.rules {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background: none;
+  outline: none;
+  border: 2px solid white;
+  color: var(--white-text);
+  padding: 0.6rem 1.5rem;
+  font-family: inherit;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  font-weight: bolder;
+  z-index: 12; 
+}
+/* modal background Color */
+.rules:focus {
+  background-color: rgba(55, 161, 45, 0.6);
+}
+/* Alginment of points */
+.points p {
+    display: flex;
+    align-items: center;     
+    gap: 12px;               
+    margin-bottom: 10px;
+  color: white;
+  font-size: 0.8rem;
+  line-height: 0.9rem;
+
+
+}
+.points i.squ {
+    font-size: 1rem;         
+    color: #4CAF50;        
+}
+.points {
+  line-height: 1.6rem;
+  color: #333;
+}
+
+.squ {
+  color: #ffd700;
+  /* margin-right: 1px; */
+  font-size: 1rem;
+}
+.modal .modal-container .squ{
+  font-size: x-small;
+  color: #FFD600;
+}
+
+.modal {
+    position: absolute;
+    top: 33%;
+    left: 75%;
+    background-color: #004429;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    border: 7px solid white;
+    border-radius: 10px;
+    width: 20%;
+    height: 50%;
+    padding: 1px;
+    z-index: 9;
+    font-family: inherit;
+    opacity: 0;
+    /* cursor: pointer; */
+  }
+  
+  .modal-container {
+    position: absolute;
+    padding: 10px;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .modal-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .close-mark{
+    height: 3.6rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -36px;
+    right: -35px;
+    border: 3px solid white;
+    border-radius: 50%;
+    background: white;
+} 
+  .close-mark i {
+    background: red;
+    color: white;
+    border-radius: 50%;
+    height: 3rem;
+    width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: xx-large;
+  }
+  
+  .close-mark:hover {
+    background: #ff4d4d;
+  }
+  
+  .show-modal{
+    pointer-events: initial;
+    opacity: 1;
+  }
+
+
+
+
+
+
+
+/* RESULTS */
+.results {
+  display: grid;
+  place-items: center;
+  grid-template-areas:
+    "you-title   result-winner pc-title"
+    "you-picked   result-winner pc-picked";
+  max-width: 60%;
+  margin: 4% auto;
+  z-index: 10;
+}
+
+.result-heading {
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  color: var(--white-text);
+  padding-bottom: 40px;
+}
+
+/* Styling for individual result sections */
+.result {
+  min-width: 130px;
+  min-height: 130px;
+  /* background-color: rgb(88, 22, 22); */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Assigning grid areas */
+.result-heading:first-of-type {
+  grid-area: you-title;
+  text-align: center;
+}
+
+.result-heading:last-of-type {
+  grid-area: pc-title;
+  text-align: center;
+}
+
+.result:first-of-type {
+  grid-area: you-picked;
+}
+
+.result:last-of-type {
+  grid-area: pc-picked;
+}
+
+/* Winner section in the middle */
+.result-winner {
+  grid-area: result-winner;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: end;
+  text-align: center;
+}
+
+.result-text {
+  color: var(--white-text);
+  font-weight: bold;
+  padding: 9%;
+  margin-top: 55%;
+}
+
+.winner .choice::after{
+  box-shadow: 0 0 0 1.6rem rgb(46, 154, 37), 0 0 0 3rem rgb(46, 154, 37, 0.4),
+  0 0 0 4rem rgb(46, 154, 37, 0.2);
+  animation: winner 1s ease forwards;
+}
+@keyframes winner {
+  from{
+    opacity: 0;
+  } to{
+    opacity: 1;
+  }
+  
+}
+/* Button styling */
+.play-again {
+  background: white;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 0.6rem;
+  color: var(--score-text);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 0.6rem 2rem;
+  transition: 0.3s;
+}
+
+.play-again:hover {
+  background: var(--bg-color);
+  color: white;
+}
+
+.hidden{
+    display: none;
+  }
+
+/* 
+ .next{
+  position: absolute;
+  bottom: 12rem;
+  right: 1rem;
+  background: none;
+  outline: none;
+  border: 2px solid white;
+  color: var(--white-text);
+  padding: 0.6rem 1.5rem;
+  font-family: inherit;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  font-weight: bolder;
+  z-index: 100000; 
+  opacity: 1;
+}
+.hurray{
+display: flex;
+align-items: center;
+justify-content: start;
+flex-direction: column;
+gap: 0;
+}
+.hurray .play-again{
+margin: -8%;
+} */
+
+.next{
+  position: absolute;
+  bottom: 2rem;
+  right: 12rem;
+  background: none;
+  outline: none;
+  border: 2px solid white;
+  color: var(--white-text);
+  padding: 0.6rem 1.5rem;
+  font-family: inherit;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  font-weight: bolder;
+  z-index: 100000; 
+}
+  .edit .play-again{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 45%;
+    margin-top: -6%;
+  }
+ 
+  
+
+  /* Media Queries for smaller screens */
+@media (max-width: 700px) {
+
+  .header {
+     
+      height: 10%;
+      padding: 0.3rem;
+      margin: 10px;
+      margin-left: 9%;
+      font-size: 0.8rem;
+      width:80%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .score-title {
+    height: 30%;
+      margin-top: 1px;
+      font-size: 0.7rem;
+letter-spacing: 1px;
+    }
+    #comp-score, #user-score{
+      font-size: 2rem;
+    }
+
+  .game {
+      width: 100%;
+      max-width: 320px;
+      margin-top: 1px;
+      height: 20rem;
+      padding-top: 3rem;
+      margin-left: 10rem;
+      width: 25rem;
+  }
+
+  .choice {
+      height: 4rem;
+      width: 4rem;
+  }
+
+  i {
+      font-size: x-large;
+  }
+
+ 
+    #line1 {
+      height: 4%;
+      width: 46%;
+      top: 33%;
+      left: 20%;
+    }
+    #line2 {
+      height: 4%;
+      width: 40%;
+      top: 50%;
+      left: 12%;
+      transform: rotate(-120deg);
+    }
+
+    #line3 {
+      height: 4%;
+      width: 50%;
+      top: 60%;
+      right: 12%;
+      transform: rotate(-59deg);
+    }
+
+  .rules {
+      bottom: 1rem;
+      right: 1rem;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+  }
+
+  .modal {
+      width: 35%;
+      max-width: 300px;
+      font-size: 0.4rem;
+      margin-left: -10%;
+      
+      
+  }
+
+  .results {
+      grid-template-columns:
+          "you-title"
+          "you-picked"
+          "pc-title"
+          "pc-picked"
+          "result-winner";
+      gap: 1px;
+      font-size: 1rem;
+  }
+
+  .result-heading {
+      padding-bottom: 10px;
+  }
+
+  .result-winner {
+      margin-top: 10px;
+      font-size: 0.8rem;
+  }
+.play-again{
+  padding: 8px;
+}
+  .next {
+    bottom: 1rem;
+    right: 8rem;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+}
+.winner{
+  font-size: 1rem;
+}
+.hurray svg{
+  width: 100%;
+  height : 100%;
+}
+
+.edit .play-again{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 43%;
+  margin-top: -7%;
+}
+}
+
+@media (max-width: 500px) {
+
+  .header {     
+      width:80%;
+      justify-content: space-evenly;
+  }
+  .score-title {
+      width: 80px;
+    }
+  .game {
+      width: 100%;
+      padding-top: 3rem;
+      margin-left: 3rem;
+      margin-top: 6rem;
+
+  }
+  .rules {
+      bottom: 2rem;
+      right: 2rem;
+  }
+
+  .modal {
+      width: 60%;
+      height: 33%;
+      max-width: 300px;
+      font-size: 3rem;
+      margin-top: 55%;
+      margin-left: -42%;
+      padding-bottom: 0;
+      
+      
+  }
+
+  .results {
+  margin-top: 10rem;
+  padding-top: 3rem;
+      margin-left: 3rem;
+    }
+
+  .result-heading {
+      padding-bottom: 10px;
+  }
+
+  .result-winner {
+      font-size: 0.6rem;
+  }
+.play-again{
+  padding: 5px;
+  font-size: 0.6rem;
+}
+  .next {
+    bottom: 2rem;
+}
+.winner{
+  font-size: 1rem;
+}
+.hurray svg{
+  margin-top: 15rem;
+  width: 100%;
+  height : 200%;
+}
+
+.edit .play-again{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 43%;
+  margin-top: -7%;
+}
+}
