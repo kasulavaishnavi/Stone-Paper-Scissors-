@@ -591,19 +591,18 @@ margin-top: 15%;
     }
   .game {
       margin-left: 10%;
-      margin-top: -10%;
+      margin-top: -20%;
   }
   .rules {
-      bottom: 2rem;
+      bottom: 1rem;
       right: 2rem; 
       }
 
   .modal {
       width: 70%;
-      height: 40%;
+      height: 37%;
       font-size: 0.7rem;
-      margin: 45% 0 45% -55%;
-      /* padding: 0px;       */
+      margin: 40% 0 45% -55%;
   }
 .choice{
     height: 3.3rem;
@@ -636,7 +635,7 @@ padding: 0px;
   height : 200%;
 }
 .next{
-  bottom: 2rem;
+  bottom: 1rem;
 }
 
 .edit .play-again{
