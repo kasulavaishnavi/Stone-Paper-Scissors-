@@ -337,7 +337,6 @@ i {
 .result {
   min-width: 130px;
   min-height: 130px;
-  /* background-color: rgb(88, 22, 22); */
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -417,7 +416,6 @@ i {
 .hidden{
     display: none;
   }
-
 
 .next{
   position: absolute;
@@ -575,9 +573,6 @@ margin-top: 15%;
 }
 }
 
-
-
-
 @media (max-width: 500px) {
   .header{
     font-size: 0.8rem;
@@ -604,9 +599,9 @@ margin-top: 15%;
 
   .modal {
       width: 70%;
-      height: 40%;
+      height: 30%;
       font-size: 1rem;
-      margin: 30% 0 45% -55%;
+      margin: 60% 0 45% -55%;
       padding: 0px;      
   }
 .choice{
