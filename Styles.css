@@ -585,7 +585,7 @@ letter-spacing: 1px;
 
 
 
-@media (max-width: 430px) {
+@media (max-width: 500px) {
   .header{
     font-size: 0.6rem;
   }
@@ -604,7 +604,7 @@ letter-spacing: 1px;
   .game {
       width: 100%;
       padding-top: 3rem;
-      margin-left: -2%;
+      margin-left: 12%;
       margin-top: 1rem;
   }
   .rules {
@@ -615,7 +615,7 @@ letter-spacing: 1px;
 
   .modal {
       width: 70%;
-      height: 55%;
+      height: 35%;
       font-size: 2rem;
       margin-top: 60%;
       margin-left: -55%;
@@ -632,20 +632,19 @@ letter-spacing: 1px;
   .results {
     grid-template-columns: repeat(3, 60%);
     margin-top: 20px;
-    margin-left: -11px;
+    margin-left: -17px;
 gap:0%;
 padding: 0px;
     }
     .result-winner {
-      font-size: 0.8rem;
+      font-size: 0.5rem;
   }
     .choices i{
  font-size: xx-large;
     }
-  .result-heading  {
+  .result-heading h2  {
     padding-top: 30%;
       padding-bottom: 30%;
-      font-size: 0.5rem;
   }
   .next {
     bottom: 2rem;
@@ -661,11 +660,11 @@ padding: 0px;
   margin-top: -7%;
   padding: 4px;
 }
-
 }
 
 
-/* @media (max-width: 400px) {
+
+@media (max-width: 400px) {
 
   .header {     
       width:85%;
@@ -692,7 +691,7 @@ padding: 0px;
 
   }
   .rules {
-      bottom: 1rem;
+      bottom: 2rem;
       right: 2rem;
   }
 
@@ -704,15 +703,9 @@ padding: 0px;
       margin-left: -55%;
   }
 
-  .results {
-    margin-left: -20px;
-gap: 0px;
-width: 10px;
-height: 10px;
-    }
-  .result-heading  {
+.result-heading  {
       padding-bottom: 70px;
-font-size: 1rem;
+font-size: 0.7rem;
   }
   .result-text {
     padding-top: 90px;
@@ -745,8 +738,8 @@ font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 42%;
+  margin-left: 40%;
   margin-top: -7%;
   padding: 1px;
 }
-} */
+} 
