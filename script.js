@@ -33,6 +33,8 @@ const container = document.querySelector(".container")
 const playButton = document.querySelector(".play-again");
   const CompScore = document.getElementById("comp-score");
   const UserScore = document.getElementById("user-score");
+  const restscore = document.querySelector(".rest");
+
 let userScore = 0;
 let compScore = 0;
 
@@ -86,20 +88,21 @@ function displayWinner(results){
             nextBtn.style.display = 'block';
             userScore++;
             updateScores();
+            localStorage.setItem("userScore", JSON.stringify(userScore))
+
             displayHurray();
         } else if(PcWins){
             resultText.innerHTML = `<h2>YOU LOST</h2><h5>AGAINST PC</h5>`;
             resultDivs[1].classList.toggle("winner");
             compScore++;
             updateScores();
-            localStorage.setItem("userScore", JSON.stringify(userScore))
+            localStorage.setItem("compScore", JSON.stringify(compScore))
 
         } else {
             resultText.innerHTML = `<h2>TIE UP</h2>`
         }
         resultWinner.classList.toggle("hidden");
     // resultsDiv.classList.add("show-winner");
-    localStorage.setItem("compScore", JSON.stringify(compScore))
    
     }, 1000);
 }
@@ -178,3 +181,11 @@ if (storedCompScore) {
 // localStorage.setItem("testKey", "testValue");
 // console.log(localStorage.getItem("testKey"));
 // localStorage.removeItem("testKey");
+
+
+restscore.addEventListener("click",()=>{
+    userScore = 0;
+    compScore = 0;
+    updateScores();
+})
+
