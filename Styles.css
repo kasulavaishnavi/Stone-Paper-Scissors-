@@ -250,7 +250,7 @@ i {
     border: 7px solid white;
     border-radius: 10px;
     width: 20%;
-    height: 50%;
+    height: 60%;
     padding: 1px;
     z-index: 9;
     font-family: inherit;
@@ -531,10 +531,9 @@ letter-spacing: 1px;
       max-width: 300px;
       font-size: 0.4rem;
       margin-left: -20%;
-      
-      
+      height: 45%;
+margin-top: 15%; 
   }
-
   .results {
       gap: 30px;
       font-size: 1rem;
@@ -587,7 +586,7 @@ letter-spacing: 1px;
 
 @media (max-width: 500px) {
   .header{
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
   .score{
     gap: 5px;
@@ -602,24 +601,19 @@ letter-spacing: 1px;
       font-size: 1rem;
     }
   .game {
-      width: 100%;
-      padding-top: 3rem;
-      margin-left: 12%;
-      margin-top: 1rem;
+      margin-left: 17%;
   }
   .rules {
       bottom: 2rem;
-      right: 2rem;
-     
+      right: 2rem; 
       }
 
   .modal {
       width: 70%;
-      height: 35%;
-      font-size: 2rem;
-      margin-top: 60%;
-      margin-left: -55%;
-      padding: 1px;      
+      height: 40%;
+      font-size: 1rem;
+      margin: 30% 0 45% -55%;
+      padding: 0px;      
   }
 .choice{
     height: 3.3rem;
@@ -630,9 +624,9 @@ letter-spacing: 1px;
   left: 7%;
 }
   .results {
-    grid-template-columns: repeat(3, 60%);
+    grid-template-columns: repeat(3, 40%);
     margin-top: 20px;
-    margin-left: -17px;
+    margin-left: 13%;
 gap:0%;
 padding: 0px;
     }
@@ -646,17 +640,17 @@ padding: 0px;
     padding-top: 30%;
       padding-bottom: 30%;
   }
-  .next {
-    bottom: 2rem;
-}
 .hurray svg{
   margin-top: 15rem;
   width: 100%;
   height : 200%;
 }
+.next{
+  bottom: 2rem;
+}
 
 .edit .play-again{
-  margin-left: 38%;
+  margin-left: 42%;
   margin-top: -7%;
   padding: 4px;
 }
