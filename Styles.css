@@ -606,10 +606,10 @@ letter-spacing: 1px;
 }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
 
   .header {     
-      width:80%;
+      width:85%;
       justify-content: space-evenly;
   }
   .score-title {
@@ -618,7 +618,7 @@ letter-spacing: 1px;
   .game {
       width: 100%;
       padding-top: 3rem;
-      margin-left: 4rem;
+      margin-left: 2rem;
       margin-top: 6rem;
 
   }
@@ -629,10 +629,10 @@ letter-spacing: 1px;
 
   .modal {
       width: 60%;
-      height: 33%;
+      height: 30%;
       max-width: 300px;
       font-size: 3rem;
-      margin-top: 55%;
+      margin-top: 58%;
       margin-left: -42%;
       padding-bottom: 0;
       
@@ -640,22 +640,27 @@ letter-spacing: 1px;
   }
 
   .results {
-    gap: 14px;
-  margin-top: 10rem;
-  padding-top: 3rem;
-      margin-left: 4rem;
+    gap:0rem;
+  margin-top: 5rem;
+  padding-top: 4rem;
+    margin-left: 0.3rem;
     }
 
-  .result-heading {
+  .result-heading h2 h5 {
+
       padding-bottom: 10px;
+      
   }
 
   .result-winner {
+    /* padding:0rem; */
       font-size: 0.9rem;
   }
 .play-again{
-  padding: 10px;
-  font-size: 0.6rem;
+  width: 130px;
+  height: 50px;
+  padding: 2px;
+  font-size: 1rem;
 }
   .next {
     bottom: 2rem;
@@ -673,7 +678,8 @@ letter-spacing: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 43%;
+  margin-left: 35%;
   margin-top: -7%;
+  padding: 1px;
 }
 }

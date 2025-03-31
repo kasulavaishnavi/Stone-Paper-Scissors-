@@ -98,7 +98,7 @@ function displayWinner(results){
             resultText.innerHTML = `<h2>TIE UP</h2>`
         }
         resultWinner.classList.toggle("hidden");
-    resultsDiv.classList.add("show-winner");
+    // resultsDiv.classList.add("show-winner");
     localStorage.setItem("compScore", JSON.stringify(compScore))
    
     }, 1000);
@@ -119,7 +119,7 @@ function updateScores(){
 function resetGame() {
     game.classList.remove("hidden");
     resultsDiv.classList.add("hidden");
-    resultsDiv.classList.remove("show-winner");
+    // resultsDiv.classList.remove("show-winner");
     resultDivs.forEach(resultDiv => {
       resultDiv.innerHTML = "";
       resultDiv.classList.remove("winner");
@@ -148,7 +148,7 @@ function displayHurray () {
         nextBtn.style.display = "none"
         container.classList.add("hidden");
         resultWinner.classList.add("hidden");
-        resultsDiv.classList.remove("show-winner");
+        // resultsDiv.classList.remove("show-winner");
         resultsDiv.classList.add("hidden")
         
     });
