@@ -591,6 +591,7 @@ margin-top: 15%;
     }
   .game {
       margin-left: 10%;
+      margin-top: -10%;
   }
   .rules {
       bottom: 2rem;
@@ -599,10 +600,10 @@ margin-top: 15%;
 
   .modal {
       width: 70%;
-      height: 30%;
-      font-size: 1rem;
-      margin: 55% 0 45% -55%;
-      padding: 0px;      
+      height: 40%;
+      font-size: 0.7rem;
+      margin: 45% 0 45% -55%;
+      /* padding: 0px;       */
   }
 .choice{
     height: 3.3rem;
