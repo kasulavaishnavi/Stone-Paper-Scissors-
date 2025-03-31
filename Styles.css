@@ -509,7 +509,7 @@ letter-spacing: 1px;
       margin-top: 1px;
       height: 20rem;
       padding-top: 3rem;
-      margin-left: 10rem;
+      margin-left: 6rem;
       width: 25rem;
   }
 
@@ -553,35 +553,36 @@ letter-spacing: 1px;
   }
 
   .modal {
-      width: 35%;
+      width: 40%;
       max-width: 300px;
       font-size: 0.4rem;
-      margin-left: -10%;
+      margin-left: -20%;
       
       
   }
 
   .results {
-      grid-template-columns:
-          "you-title"
-          "you-picked"
-          "pc-title"
-          "pc-picked"
-          "result-winner";
-      gap: 1px;
+      gap: 30px;
       font-size: 1rem;
+      margin-left: 50px;
   }
 
   .result-heading {
-      padding-bottom: 10px;
+      padding: 30px 0 9px 0;
   }
 
   .result-winner {
       margin-top: 10px;
       font-size: 0.8rem;
   }
+  .result-winner{
+    width: 120px;
+    /* height: 100px; */
+    /* padding: 20px 40px 0 40px; */
+  }
 .play-again{
-  padding: 8px;
+  padding: 5px;
+  font-size: 0.8rem;
 }
   .next {
     bottom: 1rem;
@@ -593,6 +594,7 @@ letter-spacing: 1px;
   font-size: 1rem;
 }
 .hurray svg{
+  margin-top: 8rem;
   width: 100%;
   height : 100%;
 }
@@ -606,20 +608,35 @@ letter-spacing: 1px;
 }
 }
 
-@media (max-width: 450px) {
+
+
+
+@media (max-width: 420px) {
 
   .header {     
-      width:85%;
-      justify-content: space-evenly;
+      width:80%;
+      justify-content: space-around;
+      gap: 0;
+      font-size: 0.6rem;
+  }
+  .score{
+    gap: 8px;
   }
   .score-title {
-      width: 80px;
+      /* width: 80px; */
+      width: 56px;
+      height: 50px;
+      font-size: 0.5rem;
+      gap: 0;
+    }
+  #comp-score, #user-score{
+      font-size: 1.3rem;
     }
   .game {
       width: 100%;
       padding-top: 3rem;
-      margin-left: 2rem;
-      margin-top: 6rem;
+      margin-left: 9%;
+      margin-top: 1rem;
 
   }
   .rules {
@@ -628,39 +645,42 @@ letter-spacing: 1px;
   }
 
   .modal {
-      width: 60%;
+      width: 70%;
       height: 30%;
       max-width: 300px;
       font-size: 3rem;
-      margin-top: 58%;
-      margin-left: -42%;
-      padding-bottom: 0;
-      
-      
+      margin-top: 55%;
+      margin-left: -55%;
+      padding-bottom: 0;   
   }
 
   .results {
-    gap:0rem;
-  margin-top: 5rem;
-  padding-top: 4rem;
-    margin-left: 0.3rem;
+    margin-left: 18px;
+gap: 0px;
+    }
+    .result{
+      width: 20px;
+height: 20px;
     }
 
-  .result-heading h2 h5 {
-
-      padding-bottom: 10px;
-      
+  .result-heading  {
+      padding-bottom: 70px;
+font-size: 1rem;
+  }
+  .result-text {
+    padding-top: 90px;
+    
+    font-size: 0.8rem;
   }
 
   .result-winner {
-    /* padding:0rem; */
-      font-size: 0.9rem;
+      font-size: 0.5rem;
   }
 .play-again{
-  width: 130px;
-  height: 50px;
-  padding: 2px;
-  font-size: 1rem;
+  width:80px;
+  height: 30px;
+  padding: 1px;
+  font-size: 0.6rem;
 }
   .next {
     bottom: 2rem;
@@ -678,7 +698,7 @@ letter-spacing: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 35%;
+  margin-left: 42%;
   margin-top: -7%;
   padding: 1px;
 }
