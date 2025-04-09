@@ -11,6 +11,8 @@
     <title>Stone,Paper,Scissors</title>
   </head>
   <body>
+
+<!---------------- Title, Score Display-------------------->
     <div class="container">
       <header class="header">
         <div class="title">
@@ -35,7 +37,7 @@
           </div>
         </div>
       </header>
-
+<!-- -------------------Game choices ---------------------- -->
       <section class="game">
         <button class="choices" data-choice="rock">
           <div class="choice rock">
@@ -57,7 +59,7 @@
         <div class="lines" id="line3"></div>
       </section>
     </div>
-
+<!-- -----------------Result display --------------------     -->
     <section class="results hidden">
       <h2 class="result-heading">YOU PICKED</h2>
       <h2 class="result-heading">PC PICKED</h2>
@@ -69,37 +71,41 @@
       <div class="result"></div>
     </section>
 
-    <button class="rules">RULES</button>
-    <div class="modal">
-      <div class="modal-container">
-        <div class="modal-header">
-          <div class="modal-heading">Game Rules</div>
-          <div class="close-mark">
-            <i class="fa-solid fa-xmark"></i>
-          </div>
-        </div>
-        <div class="points">
-          <p>
-            <i class="fa-solid fa-square squ"></i> Rock beats scissors, scissors
-            beat paper, and paper beats rock.
-          </p>
-          <p>
-            <i class="fa-solid fa-square squ"></i> Agree ahead of time whether
-            you'll count off "rock, paper, scissors, shoot" or just "rock,
-            paper, scissors."
-          </p>
-          <p>
-            <i class="fa-solid fa-square squ"></i> Use rock, paper, scissors to
-            settle minor decisions or simply play to pass the time.
-          </p>
-          <p>
-            <i class="fa-solid fa-square squ"></i> If both players lay down the
-            same hand, each player lays down another hand.
-          </p>
+<!--------------------  Rules Button and Rules Points   ----------------------->
+ <div class="main-rules">
+  <button class="rules">RULES</button>
+  <div class="modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-heading">Game Rules</div>
+        <div class="close-mark">
+          <i class="fa-solid fa-xmark"></i>
         </div>
       </div>
+      <div class="points">
+        <p>
+          <i class="fa-solid fa-square squ"></i> Rock beats scissors, scissors
+          beat paper, and paper beats rock.
+        </p>
+        <p>
+          <i class="fa-solid fa-square squ"></i> Agree ahead of time whether
+          you'll count off "rock, paper, scissors, shoot" or just "rock,
+          paper, scissors."
+        </p>
+        <p>
+          <i class="fa-solid fa-square squ"></i> Use rock, paper, scissors to
+          settle minor decisions or simply play to pass the time.
+        </p>
+        <p>
+          <i class="fa-solid fa-square squ"></i> If both players lay down the
+          same hand, each player lays down another hand.
+        </p>
+      </div>
     </div>
+  </div>
 
+ </div>
+<!--------------------------------- Next Button -------------------------------->
     <button class="next hidden">NEXT</button>
     <div class="hurray edit">
       <svg
@@ -164,8 +170,8 @@
       </svg>
       <button class="play-again">PLAY AGAIN</button>
     </div>
-    <button class="rest"> RESET</button>
 
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>  
     <script src="script.js"></script>
   </body>
 </html>

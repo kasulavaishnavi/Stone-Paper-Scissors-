@@ -1,8 +1,8 @@
-// DOM
+// DOM 
 const rulesBtn = document.querySelector(".rules");
 const closeBtn = document.querySelector(".close-mark");
 const modalRules = document.querySelector(".modal");
-
+const choiceButtons = document.querySelectorAll(".choices");
 
 const Choices = [
     {
@@ -18,28 +18,26 @@ const Choices = [
         beats: "rock"
     },
 ]
-
-const choiceButtons = document.querySelectorAll(".choices");
 const game = document.querySelector(".game");
 const resultsDiv = document.querySelector(".results");
-
 const resultDivs = document.querySelectorAll(".result");
 const resultWinner = document.querySelector(".result-winner");
 const resultText = document.querySelector(".result-text");
 const nextBtn = document.querySelector(".next");
 const hurray = document.querySelector(".hurray");
 const container = document.querySelector(".container")
-
 const playButton = document.querySelector(".play-again");
-  const CompScore = document.getElementById("comp-score");
-  const UserScore = document.getElementById("user-score");
-  const restscore = document.querySelector(".rest");
+const CompScore = document.getElementById("comp-score");
+const UserScore = document.getElementById("user-score");
+const RulesContainer = document.querySelector(".main-rules")
+
+
 
 let userScore = 0;
 let compScore = 0;
-
-
 hurray.style.display = 'none';
+
+
 // GAME LOGIC
 
 choiceButtons.forEach(button =>{
@@ -56,11 +54,15 @@ function choose(choice){
     
 }
 
+//Random Function
 function pcChoose() {
     const rand = Math.floor(Math.random() * Choices.length)
 return Choices[rand]
 }
 
+
+
+// Displaying of results
 function displayResults(results) {
     resultDivs.forEach((resultDiv, idx) => {
         if (results[idx]) {
@@ -71,12 +73,13 @@ function displayResults(results) {
                 <i class="fa-solid fa-hand-${results[idx].name}"></i>
             </div>
         </div>`;
-            }, idx*1000);
+            }, idx*500);
         }
     });
     game.classList.toggle("hidden")
     resultsDiv.classList.toggle("hidden")
 }
+//Winner Display 
 function displayWinner(results){
     setTimeout(()=>{
         const userWins = isWinner(results);
@@ -86,11 +89,14 @@ function displayWinner(results){
             resultText.innerHTML = `<h2>YOU WIN</h2><h5>AGAINST PC</h5>`;
             resultDivs[0].classList.toggle("winner");
             nextBtn.style.display = 'block';
+
+            rulesBtn.style.right = "8rem";
+
             userScore++;
             updateScores();
             localStorage.setItem("userScore", JSON.stringify(userScore))
-
             displayHurray();
+            // confettiWinner();
         } else if(PcWins){
             resultText.innerHTML = `<h2>YOU LOST</h2><h5>AGAINST PC</h5>`;
             resultDivs[1].classList.toggle("winner");
@@ -102,14 +108,12 @@ function displayWinner(results){
             resultText.innerHTML = `<h2>TIE UP</h2>`
         }
         resultWinner.classList.toggle("hidden");
-    // resultsDiv.classList.add("show-winner");
    
     }, 1000);
 }
 
 function isWinner(results){
     return results[0].beats === results[1].name;
-    // playAgainButton()
 }
 
 //Updating of scores
@@ -119,10 +123,10 @@ function updateScores(){
 }
 
 //PLay AGAIN
-function resetGame() {
+function playAgainGame() {
     game.classList.remove("hidden");
     resultsDiv.classList.add("hidden");
-    // resultsDiv.classList.remove("show-winner");
+
     resultDivs.forEach(resultDiv => {
       resultDiv.innerHTML = "";
       resultDiv.classList.remove("winner");
@@ -133,8 +137,7 @@ function resetGame() {
     hurray.style.display = "none";
     container.classList.remove("hidden");
   }
-
-    playButton.addEventListener("click",resetGame)
+  playButton.addEventListener("click",playAgainGame)
 
 
 // Show and Hide rules Toggle Button
@@ -151,8 +154,9 @@ function displayHurray () {
         nextBtn.style.display = "none"
         container.classList.add("hidden");
         resultWinner.classList.add("hidden");
-        // resultsDiv.classList.remove("show-winner");
-        resultsDiv.classList.add("hidden")
+        resultsDiv.classList.add("hidden");
+        rulesBtn.style.right = "1rem";
+
         
     });
 }
@@ -161,7 +165,7 @@ const hurrayPlayAgainBtn = hurray.querySelector(".play-again");
 
 hurrayPlayAgainBtn.addEventListener('click', () => {
     hurray.style.display = 'none'; 
-    resetGame(); 
+    playAgainGame(); 
 });
 
 
@@ -177,15 +181,11 @@ if (storedCompScore) {
     compScore = JSON.parse(storedCompScore);
     CompScore.innerText = compScore;
 }
-
-// localStorage.setItem("testKey", "testValue");
-// console.log(localStorage.getItem("testKey"));
-// localStorage.removeItem("testKey");
-
-
-restscore.addEventListener("click",()=>{
-    userScore = 0;
-    compScore = 0;
-    updateScores();
-})
-
+// const confettiWinner = ()=>{
+//        confetti({
+//         particleCount: 1000,
+//         spread: 120,
+//         origin: { y: 0.7 },
+//         colors: ['#2E9A25', '#ff9a00', '#ff0000', '#c6ff00', '#ffffff'],
+//     });
+// }
